@@ -1,0 +1,6 @@
+[submodule "lib/kiwi"]
+	path = lib/kiwi
+	url = https://github.com/nucleic/kiwi.git
+[submodule "lib/rhea"]
+	path = lib/rhea
+	url = https://github.com/Nocte-/rhea.git
