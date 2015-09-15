@@ -21,10 +21,10 @@ int main( int argc, const char* argv[] )
 
     solver.addEditVariable(t1, strength::strong);
     solver.addEditVariable(t2, strength::strong);
-    //solver.addEditVariable(min1, strength::required);
-    //solver.addEditVariable(max1, strength::required);
     solver.addEditVariable(nom1, strength::medium);
 
+    solver.addConstraint(min1 == min1.value());
+    solver.addConstraint(max1 == max1.value());
     solver.addConstraint(min1 >= 0);
     solver.addConstraint(min1 <= nom1);
     solver.addConstraint(nom1 <= max1);
@@ -37,7 +37,11 @@ int main( int argc, const char* argv[] )
     solver.suggestValue(t2,25);
     solver.updateVariables();
 
-    std::cout << t2.value() << "\n";
+    std::cout << "t1: " << t1.value() << "\n";
+    std::cout << "t2: " << t2.value() << "\n";
+    std::cout << "min1: " << min1.value() << "\n";
+    std::cout << "max1: " << nom1.value() << "\n";
+    std::cout << "nom1: " << max1.value() << "\n";
 
 
     return 0;
