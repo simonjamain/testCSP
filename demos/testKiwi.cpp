@@ -19,10 +19,6 @@ int main( int argc, const char* argv[] )
     nom1.setValue(10);
     max1.setValue(20);
 
-    solver.addEditVariable(t1, strength::strong);
-    solver.addEditVariable(t2, strength::strong);
-    solver.addEditVariable(nom1, strength::medium);
-
     solver.addConstraint(min1 == min1.value());
     solver.addConstraint(max1 == max1.value());
     solver.addConstraint(min1 >= 0);
@@ -30,7 +26,9 @@ int main( int argc, const char* argv[] )
     solver.addConstraint(nom1 <= max1);
     solver.addConstraint(t2 == t1 + nom1);
 
-
+    solver.addEditVariable(t1, strength::strong);
+    solver.addEditVariable(t2, strength::strong);
+    solver.addEditVariable(nom1, strength::medium);
 
     solver.dump();
 

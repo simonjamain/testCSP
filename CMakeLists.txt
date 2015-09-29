@@ -11,7 +11,7 @@ SET(LIB_FOLDER "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 
 # include libraries
 add_subdirectory("${LIB_FOLDER}/rhea")
-# - headers
+# show headers
 include_directories("${LIB_FOLDER}/rhea")
 include_directories("${LIB_FOLDER}/kiwi")
 
